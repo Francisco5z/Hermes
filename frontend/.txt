@@ -1,0 +1,31 @@
+@Page
+Login {
+  Email 
+  Password
+}
+
+@Page
+SignUp {
+  Name
+  Email
+  Password
+}
+
+@Page
+Home {
+  @Element
+  Sidebar {
+    @Div
+      Salas - Listar salas que possuí acesso
+    
+    @Sep
+
+    @Div
+      Criar sala
+      Entrar em uma sala
+  }
+  Salas {
+    Avisos
+    Datas de entrega de trabalhos(To-do de trabalhos)
+  }
+}

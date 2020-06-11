@@ -1,0 +1,66 @@
+@Controller
+Room {
+  @OnlyDev
+  index {
+    Listar todas as salas
+  }
+  show {
+    Listar todas as salas acessíveis pelo usuário - ''
+    Listar todas as atividades de uma sala ou avisos - Content
+    @Query {
+      content=activities - Listar atividades
+      content=warnings - Listar avisos
+    }
+  }
+  create {
+    Criar uma sala
+    @Model {
+      @AutoGen
+      access_id
+
+      created_by
+
+      @Input
+      password 
+
+      @AutoGen
+      timestamps
+    }
+  }
+  @OnlyDev
+  delete {
+    Deletar uma sala
+  }
+}
+
+@Content
+Room {
+  Warnings {
+    @Model {
+      title: String
+      body: String
+      send_by: id(not _id)
+      room: String - Room_id = Room(_id)
+      timestamps
+    }
+    Poderá ser apagado pelo criador
+    Em 30 dias o aviso será apagado
+  }
+  Activities {
+    @Controller {
+      show {
+        @Query {
+          urgent - 2 ou menos dias para entrega do trabalho
+          near - 2 a 5 dias
+          not_urgent - 5 dias para mais
+        }
+      }
+      create {
+        title: String
+        body: String
+        date: String
+        timestamps
+      }
+    }
+  }
+}
