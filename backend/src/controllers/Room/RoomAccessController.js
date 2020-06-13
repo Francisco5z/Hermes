@@ -24,8 +24,6 @@ class RoomAccessController {
 
       const serializedResponse = { ...response._doc, "total_users": access.users.length }
 
-      console.log(response);2
-
       data.push(serializedResponse);
     }
 
