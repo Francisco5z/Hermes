@@ -1,5 +1,6 @@
 const RoomAccessSchema = require('../../models/RoomAccesses');
 const RoomSchema = require('../../models/Rooms');
+const UserSchema = require('../../models/Users');
 
 class RoomAccessController {
   async index(req, res) {
@@ -16,10 +17,14 @@ class RoomAccessController {
     for (var access of can_access) {
       const response = await RoomSchema.findOne({ room_id: can_access.forEach(i => i.room_id) })
 
-      response['total_users'] = 
       response.password = undefined;
 
+      const userInformation = await UserSchema.findOne({ id: response.created_by });
+      response.created_by = userInformation.name
+
       const serializedResponse = { ...response._doc, "total_users": access.users.length }
+
+      console.log(response);2
 
       data.push(serializedResponse);
     }

@@ -30,7 +30,7 @@ export default function Home() {
             <div className="two"></div>  
             <div className="three"></div>  
           </HamburgerMenu>
-          <img src={require('../../assets/Logo-Hermes.png')} alt="Hermes"/>
+          <img src={require('../../assets/Logo-Hermes-black.png')} alt="Hermes"/>
         </Header>
         <Main>
           <ListRooms />

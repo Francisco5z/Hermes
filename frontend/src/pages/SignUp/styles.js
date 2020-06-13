@@ -12,6 +12,7 @@ export const Aside = styled.aside`
   background-color: #fff;
 
   padding: 0 30px;
+  border: 1px solid #eee;
 
   input[name="name"], input[name="email"] {
     margin-top: 15px;
@@ -19,7 +20,7 @@ export const Aside = styled.aside`
 
   h1 {
     font-size: 25pt;
-    color: #aaa;
+    color: #636363;
   }
 
   img {

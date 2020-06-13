@@ -25,6 +25,7 @@ export const Content = styled.div`
   width: 450px;
 
   border-radius: 4px;
+  border: 1px solid #eee;
 
   @media (max-width: 547px) {
     transform: scale(0.8);

@@ -10,7 +10,8 @@ export default createGlobalStyle`
   }
   body, html, #root {
     height: 100%;
-    background-image: linear-gradient(45deg, #4ecb79, #1144ff, #8b10ae, #8b10ae);
+    background-color: #f0f0f5;
+    /* background-image: linear-gradient(45deg, #4ecb79, #1144ff, #8b10ae, #8b10ae); */
     overflow: hidden;
   }
   h1, h2, h3, h4, h5, h6 {

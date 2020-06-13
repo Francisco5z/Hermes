@@ -42,14 +42,20 @@ export const SidebarLinks = styled.div`
   justify-content: flex-start;
   padding-left: 20px;
 
+  transition: box-shadow 250ms;
+
   :hover {
     border: 2px solid #04d261;
     background-color: #fff;
+    box-shadow: 10px 8px 20px #aaa;
   }
 
   ${props => props.selected ? `
     border: 2px solid #04d261;
     background-color: #fff;
+    :hover {
+      box-shadow: none;
+    }
   ` : ``}
 
   h3 {

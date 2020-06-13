@@ -3,7 +3,7 @@ import AuthContext from '../../context/auth';
 import { Link } from 'react-router-dom';
 
 import { Container, Logo, Content, ErrorMsg, Form, Main} from './styles';
-import HermesLogo from '../../assets/Logo-Hermes.png';
+import HermesLogo from '../../assets/Logo-Hermes-black.png';
 
 import Or from '../../components/Or';
 
