@@ -22,10 +22,12 @@ routes.get('/room/:room_id', AuthMiddleware, RoomControllers.show)
 routes.post('/room/:userId', AuthMiddleware, RoomControllers.create);
 routes.delete('/room/:room_id', RoomControllers.delete);
 
-routes.post('/room/auth/:userId', RoomSessionController.authentication);
+routes.post('/room/auth/:userId', AuthMiddleware,RoomSessionController.authentication);
 
 routes.get('/room_access', RoomAccessController.index);
-routes.delete('/room_access/:id', RoomAccessController.delete)
-routes.get('/can_access/:userId', RoomAccessController.show);
+routes.delete('/room_access/:id', AuthMiddleware,RoomAccessController.delete)
+routes.get('/can_access/:userId', AuthMiddleware, RoomAccessController.show);
+
+// routes.post('/token/token')
 
 module.exports = routes;

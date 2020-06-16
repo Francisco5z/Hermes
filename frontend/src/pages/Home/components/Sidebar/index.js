@@ -37,23 +37,23 @@ function SidebarComponent() {
   return (
     <Sidebar active={sidebarExtend}>
       <SidebarLinks selected={selectedLink === '/'}  onClick={() => redirect('/')}>
-        <AiFillHome size={30} /> 
-        <h3>Salas</h3>
+        <AiFillHome size={30} color='#fff' /> 
+        <span>Salas</span>
       </SidebarLinks>
 
       <Separator />
 
       <SidebarLinks onClick={() => redirect('/create-room')}>
-        <FiPlus size={30} />
-        <h3>Criar uma sala</h3>
+        <FiPlus size={30} color='#fff' />
+        <span>Criar uma sala</span>
       </SidebarLinks>
       <SidebarLinks onClick={() => redirect('/enter-room')}>
-        <FiLogIn size={30} />
-        <h3>Entrar em uma sala</h3>
+        <FiLogIn size={30} color='#fff' />
+        <span>Entrar em uma sala</span>
       </SidebarLinks>
 
       <LogoutButton onClick={logout}>
-        <FiLogOut size={30} />
+        <FiLogOut size={30} color='#fff' />
         <h3> Log out </h3>
       </LogoutButton>
     </Sidebar>

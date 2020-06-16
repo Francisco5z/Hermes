@@ -3,6 +3,20 @@ import styled from 'styled-components';
 export const Container = styled.div`
 `;
 
+export const UnfocusedBackgroun = styled.div`
+  position: absolute;
+  z-index: 9;
+  top: 0px;
+  left: 0px;
+
+  display: ${props => props.active ? "block" : "none"};
+
+  background-color: rgba(0, 0, 0, 0.6);
+  
+  width: 100vw;
+  height: 100vh;
+`;
+
 export const Header = styled.header`
   height: 70px;
   /* background-color: #fff; */
@@ -29,7 +43,7 @@ export const HamburgerMenu = styled.div`
   div {
     width: 100%;
     height: 3px;
-    background-color: #000; 
+    background-color: #f0f0f5; 
   }
 
   .two, .three {

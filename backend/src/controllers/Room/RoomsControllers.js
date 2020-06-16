@@ -58,7 +58,7 @@ class RoomControllers {
       users: [userId]
     });
 
-    return res.json({ access_id: created_room.access_id});
+    return res.json({ access_id: created_room.access_id });
   }
   
   async delete(req, res) {

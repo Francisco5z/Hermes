@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     loadStorageData();
-  }, [])
+  }, []);
 
   async function loadStorageData() {
     const storagedUser = localStorage.getItem('@RAuth:user');

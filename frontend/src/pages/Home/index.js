@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import AppContext from '../../context/app';
 
-import { Container, HamburgerMenu, Header, Main } from './styles';
+import { Container, HamburgerMenu, Header, Main, UnfocusedBackgroun } from './styles';
 
 import ListRooms from './components/ListRooms';
 import Sidebar from './components/Sidebar';
@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <>
       <Sidebar />
+      <UnfocusedBackgroun active={sidebarExtend} />
       <Container>
         <Header>
           <HamburgerMenu onClick={handleToggleSidebar}>
@@ -30,7 +31,7 @@ export default function Home() {
             <div className="two"></div>  
             <div className="three"></div>  
           </HamburgerMenu>
-          <img src={require('../../assets/Logo-Hermes-black.png')} alt="Hermes"/>
+          <img src={require('../../assets/Logo-Hermes.png')} alt="Hermes"/>
         </Header>
         <Main>
           <ListRooms />

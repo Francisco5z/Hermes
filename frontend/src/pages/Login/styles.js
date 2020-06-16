@@ -20,12 +20,12 @@ export const Main = styled.main`
 
 export const Content = styled.div`
   padding: ${props => props.on === 'true' ? '50px' : '20px'} 50px;
-  background-color: #FFF;
+  background-color: #1A1A1D;
   height: 350px;
   width: 450px;
 
   border-radius: 4px;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 
   @media (max-width: 547px) {
     transform: scale(0.8);
@@ -77,11 +77,26 @@ export const Form = styled.form`
   text-align: center;
   a {
     text-decoration: none;
-    color: #1144ff;
+    color: #04d261;
     transition: 250ms;
     :hover {
       opacity: 0.7;
     }
+  }
+
+  input {
+    background-color: #202124;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    color: #fff;
+  
+    ::placeholder {
+      color: #f0f0f5;
+    } 
+
+    :focus {
+      border: 2px solid #04d261;
+    } 
   }
 
   input[name="password"] {

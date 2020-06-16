@@ -23,12 +23,12 @@ export const Or = styled.div`
     content: '';
     height: 2px;
     width: 40%;
-    background-color: #aaa;
+    background-color: ${props => props.stripsColor};
   }
   ::after {
     content: ''; 
     height: 2px;
     width: 40%;
-    background-color: #aaa;
+    background-color: ${props => props.stripsColor};
   }
 `;

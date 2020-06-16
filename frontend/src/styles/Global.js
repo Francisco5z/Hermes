@@ -8,11 +8,16 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: "Noto sans", sans-serif;
   }
+
   body, html, #root {
-    height: 100%;
-    background-color: #f0f0f5;
-    /* background-image: linear-gradient(45deg, #4ecb79, #1144ff, #8b10ae, #8b10ae); */
+    height: 100vh;
+    background-color: #202124;
     overflow: hidden;
+    -webkit-font-smoothing: auto;
+
+    --box-border-color: rgba(0, 0, 0, 0.2);
+    --box-background-color: #1A1A1D;
+    --background-color: #202124;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;

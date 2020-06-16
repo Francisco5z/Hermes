@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 const AppContext = createContext({
   sidebarExtend: false
@@ -9,7 +9,7 @@ export const AppProvider = ({ children }) => {
 
   const values = {
     sidebarExtend,
-    setSidebarExtend
+    setSidebarExtend,
   }
   
   return (

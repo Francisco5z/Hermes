@@ -16,25 +16,32 @@ export const Sidebar = styled.aside`
 
   position: absolute;
   top: 0;
+  z-index: 10;
   left: ${props => props.active ? 0 : "-400px"};
 
   transition: 250ms;
 
-  background-color: #eee;
+  background-color: #202124;
   width: 300px;
   height: 100%;
 
-  box-shadow: 3px 4px 30px #aaa;
+  border: 1px solid rgba(0, 0,0, 0.2);
+
+  /* box-shadow: 3px 4px 30px #aaa; */
 `;
 
 export const SidebarLinks = styled.div`
   position: relative;
   width: 90%;
   height: 50px;
-  border: 1px solid #aaa;
+  border: 1px solid var(--box-border-color);
   border-radius: 30px;
   margin: 0 auto 10px auto;
+
+  background-color: var(--box-background-color);
   
+  color: #f0f0f5;
+
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -46,20 +53,21 @@ export const SidebarLinks = styled.div`
 
   :hover {
     border: 2px solid #04d261;
-    background-color: #fff;
-    box-shadow: 10px 8px 20px #aaa;
+    background-color: #1A1A1D;
+    box-shadow: 10px 8px 20px #111;
   }
 
   ${props => props.selected ? `
     border: 2px solid #04d261;
-    background-color: #fff;
+    background-color: #1A1A1D;
     :hover {
       box-shadow: none;
     }
   ` : ``}
 
-  h3 {
+  span {
     margin-left: 10px;
+    font-size: 15px;
   }
 `;
 
