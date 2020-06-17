@@ -30,6 +30,7 @@ routes.delete('/room_access/:id', AuthMiddleware,RoomAccessController.delete)
 routes.get('/can_access/:userId', AuthMiddleware, RoomAccessController.show);
 
 routes.get('/warnings', AuthMiddleware, WarningsControlers.index)
+routes.get('/room/warnings/:room_id', AuthMiddleware, WarningsControlers.show);
 routes.post('/warnings/:userId', AuthMiddleware, WarningsControlers.create);
 routes.delete('/warnings/:id', AuthMiddleware, WarningsControlers.delete);
 

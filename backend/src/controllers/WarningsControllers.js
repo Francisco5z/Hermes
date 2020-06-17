@@ -7,7 +7,13 @@ class WarningsControllers {
 
     return res.json(Warnings);
   }
-  async show(req, res) {}
+  async show(req, res) {
+    const { room_id } = req.params;
+
+    const Warnings = await WarningsSchema.find({ room_id: room_id });
+
+    return res.json(Warnings);
+  }
   async create(req, res) {
     const { body, room_id } = req.body;
     const { userId } = req.params;
