@@ -6,6 +6,7 @@ const AuthController = require('./controllers/AuthenticationController');
 const RoomControllers = require('./controllers/Room/RoomsControllers');
 const RoomSessionController = require('./controllers/Room/RoomSessionController');
 const RoomAccessController = require('./controllers/Room/RoomAccessController')
+const WarningsControlers =  require('./controllers/WarningsControllers');
 
 routes.get('/ok', AuthMiddleware, (req , res) => {
   return res.json({userId: req.app.locals['userId']});
@@ -28,6 +29,8 @@ routes.get('/room_access', RoomAccessController.index);
 routes.delete('/room_access/:id', AuthMiddleware,RoomAccessController.delete)
 routes.get('/can_access/:userId', AuthMiddleware, RoomAccessController.show);
 
-// routes.post('/token/token')
+routes.get('/warnings', AuthMiddleware, WarningsControlers.index)
+routes.post('/warnings/:userId', AuthMiddleware, WarningsControlers.create);
+routes.delete('/warnings/:id', AuthMiddleware, WarningsControlers.delete);
 
 module.exports = routes;
