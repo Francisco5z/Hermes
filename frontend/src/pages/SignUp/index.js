@@ -29,7 +29,7 @@ function SignUp() {
         password
       });
 
-      localStorage.setItem('@RAuth:user', JSON.stringify(createdUser.data));
+      localStorage.setItem('@RAuth:user', JSON.stringify(createdUser.data.user));
       localStorage.setItem('@RAuth:token', createdUser.data.token);
 
       if (createdUser.status === 200) {
@@ -62,7 +62,7 @@ function SignUp() {
       </DoneMessage>
       <Container>
         <Aside>
-          <img src={require('../../assets/Logo-Hermes-black.png')} alt="Logo"/>
+          <img src={require('../../assets/Logo-Hermes.png')} alt="Logo"/>
           <h1>Criar a sua conta</h1>
           <form onSubmit={handleSignUp}>
             <input 
@@ -97,7 +97,7 @@ function SignUp() {
                 type="button"
                 onClick={() => handleTogglePasswordVisibility(passwordVisible, setPasswordVisible)}
               > 
-                {passwordVisible ? <AiFillEyeInvisible size={25} /> : <AiFillEye size={25} />} 
+                {passwordVisible ? <AiFillEyeInvisible color="#fff" size={25} /> : <AiFillEye color="#fff" size={25} />} 
               </button>
             </div>
             <button type="submit" className="button-form">Criar</button>

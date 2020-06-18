@@ -35,7 +35,7 @@ class UserControllers {
 
     createdUser.password = undefined
     return res.json({
-      createdUser,
+      user: createdUser,
       token: generateToken({
         id: createdUser._id
       })

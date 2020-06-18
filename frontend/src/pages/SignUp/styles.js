@@ -9,10 +9,10 @@ export const Container = styled.div`
 export const Aside = styled.aside`
   width: 400px;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--box-background-color);
 
   padding: 0 30px;
-  border: 1px solid #eee;
+  border: 1px solid var(--box-border-color);
 
   input[name="name"], input[name="email"] {
     margin-top: 15px;
@@ -20,7 +20,8 @@ export const Aside = styled.aside`
 
   h1 {
     font-size: 25pt;
-    color: #636363;
+    /* color: var(--primary-color); */
+    color: #f0f0f5;
   }
 
   img {
@@ -46,7 +47,9 @@ export const Aside = styled.aside`
       display: flex;
       justify-content: center;
       align-items: center;
-      border: none;
+      border: 1px solid var(--box-border-color);
+
+      background-color: var(--background-color);
 
       cursor: pointer;
       transition: 250ms;
@@ -64,7 +67,7 @@ export const Aside = styled.aside`
 
     a {
       text-decoration: none;
-      color: #1144ff;
+      color: var(--primary-color);
       transition: 250ms;
       
       :hover {

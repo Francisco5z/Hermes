@@ -32,6 +32,7 @@ routes.get('/can_access/:userId', AuthMiddleware, RoomAccessController.show);
 routes.get('/warnings', AuthMiddleware, WarningsControlers.index)
 routes.get('/room/warnings/:room_id', AuthMiddleware, WarningsControlers.show);
 routes.post('/warnings/:userId', AuthMiddleware, WarningsControlers.create);
+routes.put('/edit/warnings', AuthMiddleware, WarningsControlers.update);
 routes.delete('/warnings/:id', AuthMiddleware, WarningsControlers.delete);
 
 module.exports = routes;

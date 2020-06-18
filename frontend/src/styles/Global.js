@@ -13,8 +13,9 @@ export default createGlobalStyle`
     height: 100vh;
     background-color: #202124;
     overflow: hidden;
-    -webkit-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
 
+    --primary-color: #04d261;
     --box-border-color: rgba(0, 0, 0, 0.2);
     --box-background-color: #1A1A1D;
     --background-color: #202124;
@@ -23,17 +24,17 @@ export default createGlobalStyle`
     font-family: "Roboto", sans-serif;
   }
 
-
   .input-form {
     height: 50px;
     width: 100%;
     font-size: 16pt;
-    background-color: #f0f0f5;
+    background-color: var(--background-color);
     border: none;
     padding-left: 5px;
     border-radius: 2px;
+    color: #fff;
     :focus {
-      border: 2px solid #1144aa; 
+      border: 2px solid var(--primary-color); 
     }
   }
 

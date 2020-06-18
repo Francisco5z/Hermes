@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
 `;
 
-export const UnfocusedBackgroun = styled.div`
+export const UnfocusedBackground = styled.div`
   position: absolute;
   z-index: 9;
   top: 0px;
   left: 0px;
-
+  
   display: ${props => props.active ? "block" : "none"};
 
   background-color: rgba(0, 0, 0, 0.6);

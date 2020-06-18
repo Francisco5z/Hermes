@@ -8,7 +8,7 @@ import { Sidebar, SidebarLinks, Separator, LogoutButton } from './styles';
 import { AiFillHome } from 'react-icons/ai';
 import { FiPlus, FiLogIn, FiLogOut } from 'react-icons/fi';
 
-function SidebarComponent() {
+function SidebarComponent({ setUnfocusedBackgroundActive, setLogInRoomExtend }) {
   const [selectedLink, setSelectedLink] = useState(useLocation().pathname);
 
   const { sidebarExtend, setSidebarExtend } = useContext(AppContext);
@@ -31,7 +31,12 @@ function SidebarComponent() {
   function redirect(url) {
     setSidebarExtend(false)
     setInterval(() => history.push(url), 300)
-    
+  }
+
+  function handleLoadLogInRoom() {
+    setUnfocusedBackgroundActive(true);
+    setSidebarExtend(false);
+    setLogInRoomExtend(true);
   }
 
   return (
@@ -47,7 +52,7 @@ function SidebarComponent() {
         <FiPlus size={30} color='#fff' />
         <span>Criar uma sala</span>
       </SidebarLinks>
-      <SidebarLinks onClick={() => redirect('/enter-room')}>
+      <SidebarLinks onClick={handleLoadLogInRoom}>
         <FiLogIn size={30} color='#fff' />
         <span>Entrar em uma sala</span>
       </SidebarLinks>

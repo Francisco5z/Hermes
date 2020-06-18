@@ -15,6 +15,11 @@ const WarningsSchema = new mongoose.Schema({
   created_by: {
     type: String,
     required: true
+  },
+  // Criado em (data) em formato dd/mm/aaaa em Array
+  created_in: {
+    type: Array,
+    required: true
   }
 });
 

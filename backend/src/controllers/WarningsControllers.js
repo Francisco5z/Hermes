@@ -24,10 +24,13 @@ class WarningsControllers {
       return res.status(404).json({ error: 'Room not found' });
     }
 
+    const InsDate = new Date(); 
+
     const data = {
       body, 
       room_id,
-      created_by: userId
+      created_by: userId,
+      created_in: [InsDate.getDate(), InsDate.getMonth(), InsDate.getFullYear()]
     }
 
     const createdWarning = await WarningsSchema.create(data);
@@ -37,7 +40,19 @@ class WarningsControllers {
     }
     return res.status(400).json({ error: 'Could not create the warning' })
   }
-  async update(req, res) {}
+  async update(req, res) {
+    const { body, id } = req.body;
+
+    if (!body) {
+      return res.status(400).json({ error: 'Body field  cannot be empty.' });
+    }
+
+    const response = await WarningsSchema.findByIdAndUpdate(id, {
+      body: body
+    });
+
+    return res.status(204).send();
+  }
   async delete(req, res) {
     const { id } = req.params;
     

@@ -5,7 +5,7 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
 
-  overflow: ${props => props.dataLength >= 3 ? "scroll" : 'hidden'};
+  overflow: ${props => Number(props.dataLength) >= 4 ? "scroll" : "hidden"};
   overflow-x: hidden;
   max-height: ${`${window.innerHeight - 100}px`};
 
@@ -13,6 +13,13 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 411px) {
+    max-height: 823px;
+  }
 
   @media (max-width: 520px) {
     grid-template-columns: 1fr;
@@ -20,51 +27,57 @@ export const Container = styled.div`
 `;
 
 export const RoomCard = styled.div`
-  width: 300px;
+  width: 280px;
   height: 320px;
-  background-color: #1a1a1d;
-
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--box-background-color);
+  border: 1px solid var(--box-border-color);
 
   border-radius: 15px;
   padding: 15px;
 
-  header {
-    h1 {
-      color: #04d261;
-    }
-    span {
+  h1 {
+    color: var(--primary-color);
+  }
+
+  span, p {
+    color: #f0f0f5;
+  }
+
+  /* div:first-child {
+  } */
+
+  div:not(:first-child) {
+    margin-top: 10px;
+    position: relative;
+    
+    height: 230px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      bottom: 30px;
+      text-decoration: none;
+      font-size: 20px;
       color: #fff;
+      height: 35px;  
+      width: 100%;
+      border-radius: 2px;
+      border: 0;
+      background-color: var(--primary-color);
+      cursor: pointer;
+
+      transition: 250ms;
+      :hover {
+        opacity: 0.7;
+      }
     }
   }
 
-  main {
-    margin-top: 10px;
-    height: 220px;
-    position: relative;
-
-    color: #fff;
-
-    button {
-      position: absolute;
-      bottom: 20px;
-      background-color: #04d261;
-      border: none;
-      width: 100%;
-      height: 40px;
-      font-size: 14pt;
-      font-weight: bold;
-      color: #fff;
-
-      z-index: 8;
-
-      cursor: pointer;
-
-      :hover {
-        background-color: #202124;
-        border: 1px solid #04d261;
-      }
-    }
+  @media (max-width: 768px) {
+    margin: 0 auto;
   }
 
   @media (max-width: 520px) {

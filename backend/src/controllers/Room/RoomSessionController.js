@@ -9,18 +9,17 @@ class RoomSessionController {
     const { userId } = req.params;
 
     const user = await UserSchema.findOne({ id: userId });
-
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
-
-    const tryAccessRoom = await RoomSchema.findOne({ access_id });
+    // Sala que está tentando acessar usando o access_id
+    // Ele vai encontrar um com o access_id como access_id
+    const tryAccessRoom = await RoomSchema.findOne({ access_id: access_id });
     if (!tryAccessRoom) {
       return res.status(404).json({ error: 'Access id invalid' });
     }
     
     const RoomAccess = await RoomAccessSchema.findOne({ room_id: tryAccessRoom._id });
-
     /**@type {string[]} */
     const CanAccessesRoomUsers = RoomAccess.users;
 

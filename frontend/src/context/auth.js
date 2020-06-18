@@ -42,6 +42,8 @@ export const AuthProvider = ({ children }) => {
 
       api.defaults.headers["Authorization"] = `Bearer ${response?.data?.token}`;
       
+      console.log(response.data);
+
       localStorage.setItem('@RAuth:user', JSON.stringify(response?.data?.user ? response?.data?.user : ''));
       localStorage.setItem('@RAuth:token', response?.data?.token ? response?.data?.token : '');
     } catch {}
